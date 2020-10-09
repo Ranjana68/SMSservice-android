@@ -9,6 +9,7 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
                 SmsManager sms=SmsManager.getDefault();//default reads the sms service of phone and stores in variable sms
                 sms.sendTextMessage(number,null,message,null,null);
-
+                Toast.makeText(MainActivity.this, "Message sent", Toast.LENGTH_SHORT).show();
+                e2.getText().clear();
+                e1.getText().clear();
             }
         });
 
